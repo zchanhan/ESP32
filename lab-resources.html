@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>实验教学资源 - HCCT-3000 实训平台</title>
+<title>开发资源 - PCT-100 温湿度控制器</title>
 <style>
 :root {
-    --primary: #1a5f8a;
-    --primary-dark: #0d3b56;
+    --primary: #0d7c5e;
+    --primary-dark: #064a36;
     --accent: #e8943a;
     --accent-light: #f5b461;
     --bg: #f4f6f9;
@@ -66,7 +66,7 @@ body {
 
 .hero {
     margin-top: 64px;
-    background: linear-gradient(160deg, #0d3b2e 0%, #1a6b4e 50%, #27ae60 100%);
+    background: linear-gradient(160deg, #0d2b45 0%, #1a6fa0 50%, #3498db 100%);
     padding: 70px 40px 90px;
     text-align: center;
     position: relative;
@@ -84,14 +84,14 @@ body {
 }
 .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
 .hero-badge {
-    display: inline-block; background: rgba(255,255,255,0.15); color: #c8f7d5;
+    display: inline-block; background: rgba(255,255,255,0.15); color: #c8e4f7;
     padding: 6px 20px; border-radius: 50px; font-size: 13px; letter-spacing: 3px;
     margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.2);
 }
 .hero h1 {
     font-size: 40px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: 2px;
 }
-.hero h1 span { color: #c8f7d5; }
+.hero h1 span { color: #c8e4f7; }
 .hero p {
     font-size: 17px; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto;
 }
@@ -103,7 +103,7 @@ body {
 }
 .section-tag {
     display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 3px;
-    color: var(--success); text-transform: uppercase; margin-bottom: 12px;
+    color: var(--info); text-transform: uppercase; margin-bottom: 12px;
 }
 .section-title {
     font-size: 28px; font-weight: 800; color: var(--primary-dark); margin-bottom: 12px;
@@ -145,7 +145,7 @@ body {
     border-bottom: 1px solid var(--border);
 }
 .resource-table th {
-    background: #f0faf4; font-weight: 700; color: var(--success);
+    background: #f0f4fa; font-weight: 700; color: var(--info);
     border-right: 1px solid var(--border);
 }
 .resource-table td { color: var(--text-light); }
@@ -159,12 +159,12 @@ body {
 .badge.orange { background: #fef3e8; color: var(--accent); }
 
 .highlight-card {
-    background: linear-gradient(135deg, #e8f8f0, #d4f1e0);
+    background: linear-gradient(135deg, #e8f4fd, #d4e8f8);
     border-radius: var(--radius); padding: 32px; margin-top: 24px;
     display: flex; gap: 20px; align-items: center;
 }
 .highlight-card .hl-icon { font-size: 44px; flex-shrink: 0; }
-.highlight-card h3 { color: var(--success); font-size: 20px; margin-bottom: 6px; }
+.highlight-card h3 { color: var(--info); font-size: 20px; margin-bottom: 6px; }
 .highlight-card p { font-size: 14px; color: var(--text-light); }
 
 .footer {
@@ -189,164 +189,195 @@ body {
 
 <nav class="navbar" id="navbar">
     <div class="nav-logo">
-        <span class="icon">&#9889;</span> HCCT-3000
+        <span class="icon">&#127777;</span> PCT-100
     </div>
     <ul class="nav-links">
         <li><a href="./index.html">首页</a></li>
         <li><a href="./product-manual.html">产品说明书</a></li>
         <li><a href="./safety-knowledge.html">安全知识</a></li>
-        <li><a href="./lab-resources.html" style="color: var(--success); font-weight: 700;">实验资源</a></li>
+        <li><a href="./lab-resources.html" style="color: var(--info); font-weight: 700;">开发资源</a></li>
     </ul>
 </nav>
 
 <header class="hero">
     <div class="hero-content">
-        <div class="hero-badge">TEACHING RESOURCES</div>
-        <h1>实验<span>教学资源</span></h1>
-        <p>汇集化工原理实验指导、仿真软件教程、操作示范视频及技能竞赛备赛资料，助力实训教学。</p>
+        <div class="hero-badge">DEVELOPMENT RESOURCES</div>
+        <h1>嵌入式<span>开发资源</span></h1>
+        <p>汇集ESP32/Arduino开发教程、MQTT协议指南、传感器驱动文档及物联网平台对接资料，助力嵌入式开发学习与项目实践。</p>
     </div>
 </header>
 
-<section class="section" id="experiments">
-    <span class="section-tag">EXPERIMENTS</span>
-    <h2 class="section-title">化工原理实验项目</h2>
-    <p class="section-desc">涵盖流体力学、传热、传质、化学反应工程等核心化工单元操作实验，配套完整实验指导书。</p>
+<section class="section" id="getting-started">
+    <span class="section-tag">GETTING STARTED</span>
+    <h2 class="section-title">快速入门教程</h2>
+    <p class="section-desc">涵盖ESP32基础开发、Arduino IDE配置、传感器驱动编写等核心入门内容。</p>
     <div class="card-grid">
         <div class="card">
-            <div class="card-icon blue">&#128167;</div>
-            <h3>流体力学实验</h3>
+            <div class="card-icon blue">&#128187;</div>
+            <h3>ESP32 开发环境搭建</h3>
             <ul>
-                <li>雷诺实验 — 观察层流与湍流现象</li>
-                <li>伯努利方程验证实验</li>
-                <li>管道阻力系数测定</li>
-                <li>离心泵特性曲线测定</li>
-                <li>流量计标定实验</li>
+                <li>Arduino IDE 安装与ESP32开发板支持包配置</li>
+                <li>PlatformIO (VS Code) 开发环境搭建</li>
+                <li>USB驱动安装与串口调试工具使用</li>
+                <li>第一个Blink程序烧录与验证</li>
+                <li>ESP32 IDF (IoT Development Framework) 简介</li>
             </ul>
         </div>
         <div class="card">
-            <div class="card-icon orange">&#128293;</div>
-            <h3>传热实验</h3>
+            <div class="card-icon orange">&#127777;</div>
+            <h3>传感器驱动开发</h3>
             <ul>
-                <li>列管换热器总传热系数测定</li>
-                <li>套管换热器对流传热实验</li>
-                <li>自然对流与强制对流比较</li>
-                <li>换热器性能对比分析</li>
-                <li>非稳态导热实验</li>
+                <li>DHT22 温湿度传感器驱动编写与数据读取</li>
+                <li>光敏电阻ADC采样与数据滤波算法</li>
+                <li>SH1106 OLED 显示屏I2C驱动与UI绘制</li>
+                <li>WS2812 RGB LED 控制与颜色管理</li>
+                <li>传感器数据融合与异常检测算法</li>
             </ul>
         </div>
         <div class="card">
-            <div class="card-icon green">&#129514;</div>
-            <h3>传质与分离实验</h3>
+            <div class="card-icon green">&#128259;</div>
+            <h3>执行器控制</h3>
             <ul>
-                <li>精馏塔全回流与部分回流操作</li>
-                <li>填料吸收塔传质系数测定</li>
-                <li>干燥速率曲线测定</li>
-                <li>萃取塔液-液萃取实验</li>
-                <li>膜分离性能测试</li>
+                <li>GPIO输出控制继电器模块</li>
+                <li>光耦隔离驱动电路设计原理</li>
+                <li>PWM调速与调光基础</li>
+                <li>自动/手动双模式控制逻辑设计</li>
+                <li>阈值触发与滞回控制算法</li>
             </ul>
         </div>
         <div class="card">
             <div class="card-icon red">&#9881;</div>
-            <h3>化学反应工程实验</h3>
+            <h3>FreeRTOS 多任务编程</h3>
             <ul>
-                <li>连续搅拌釜式反应器（CSTR）停留时间分布</li>
-                <li>管式反应器转化率测定</li>
-                <li>反应动力学参数拟合</li>
-                <li>釜式反应器热稳定性分析</li>
+                <li>FreeRTOS 任务创建与调度基础</li>
+                <li>任务优先级与堆栈大小配置</li>
+                <li>互斥锁（Mutex）与临界区保护</li>
+                <li>任务间通信：队列与事件标志</li>
+                <li>PCT-100双线程架构详解</li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class="section" id="simulation" style="background: #fff; max-width: 100%;">
+<section class="section" id="communication" style="background: #fff; max-width: 100%;">
     <div style="max-width:1200px;margin:0 auto;">
-        <span class="section-tag">SIMULATION</span>
-        <h2 class="section-title">仿真软件资源</h2>
-        <p class="section-desc">推荐以下化工过程仿真软件，辅助课堂教学与自学，提升工程实践能力。</p>
+        <span class="section-tag">COMMUNICATION</span>
+        <h2 class="section-title">通信协议与网络编程</h2>
+        <p class="section-desc">掌握WiFi网络编程和MQTT协议，是PCT-100物联网功能开发的核心。</p>
         <table class="resource-table">
-            <tr><th>Aspen Plus</th><td>稳态化工流程模拟，适用于工艺设计、物性分析、能量优化</td><td><span class="badge green">推荐</span></td></tr>
-            <tr><th>HYSYS</th><td>动态过程模拟，特别适用于油气加工和炼化过程</td><td><span class="badge green">推荐</span></td></tr>
-            <tr><th>MATLAB/Simulink</th><td>控制系统设计与仿真，PID整定、动态特性分析</td><td><span class="badge blue">常用</span></td></tr>
-            <tr><th>COMSOL Multiphysics</th><td>多物理场耦合仿真，适用于反应器CFD建模</td><td><span class="badge orange">进阶</span></td></tr>
-            <tr><th>DCS组态仿真软件</th><td>和利时、中控等国产DCS配套仿真平台</td><td><span class="badge green">推荐</span></td></tr>
-            <tr><th>三维虚拟仿真实训</th><td>沉浸式VR/AR化工厂虚拟巡检与操作培训</td><td><span class="badge blue">常用</span></td></tr>
+            <tr><th>WiFi 编程基础</th><td>STA/AP模式配置、WiFi扫描与连接、信号强度监测、断线自动重连策略、SmartConfig配网技术</td><td><span class="badge green">核心</span></td></tr>
+            <tr><th>MQTT 协议入门</th><td>发布/订阅模型、QoS质量等级、遗嘱消息、保留消息、主题命名规范、Keep Alive心跳机制</td><td><span class="badge green">核心</span></td></tr>
+            <tr><th>PubSubClient 库</th><td>连接管理、消息回调、JSON负载解析、断线重连机制、多主题订阅</td><td><span class="badge blue">必学</span></td></tr>
+            <tr><th>MQTT 安全</th><td>TLS/SSL加密连接、证书配置、双向认证、ACL权限控制</td><td><span class="badge orange">进阶</span></td></tr>
+            <tr><th>HTTP/HTTPS</th><td>RESTful API调用、JSON数据交互、OTA固件升级、Webhook集成</td><td><span class="badge blue">常用</span></td></tr>
+            <tr><th>WebSocket</th><td>实时双向通信、与Web前端联调、数据可视化面板</td><td><span class="badge orange">进阶</span></td></tr>
         </table>
     </div>
 </section>
 
-<section class="section" id="competition">
-    <span class="section-tag">COMPETITION</span>
-    <h2 class="section-title">技能竞赛备赛资源</h2>
-    <p class="section-desc">面向全国职业院校技能大赛及行业技能竞赛，提供针对性训练资料与模拟题库。</p>
+<section class="section" id="iot-platforms">
+    <span class="section-tag">IOT PLATFORMS</span>
+    <h2 class="section-title">物联网云平台对接</h2>
+    <p class="section-desc">PCT-100可对接主流物联网云平台，实现数据可视化、远程控制和设备管理。</p>
     <div class="card-grid">
         <div class="card">
-            <div class="card-icon green">&#127942;</div>
-            <h3>化工生产技术赛项</h3>
-            <p>精馏操作、反应控制、故障排除等核心技能考核点，配套操作评分标准与模拟训练方案。</p>
+            <div class="card-icon green">&#9729;</div>
+            <h3>自建MQTT服务器</h3>
+            <p>使用EMQX、Mosquitto等开源MQTT Broker搭建私有服务器，完全掌控数据。PCT-100固件已内建EMQX兼容的认证与多配置文件管理功能。参考部署方案：Docker一键部署、SSL证书配置、集群高可用。</p>
         </div>
         <div class="card">
-            <div class="card-icon blue">&#128218;</div>
-            <h3>理论题库</h3>
-            <p>涵盖化工原理、仪表自动化、安全规范等1000+道选择题与判断题，支持在线自测与错题回顾。</p>
+            <div class="card-icon blue">&#127758;</div>
+            <h3>阿里云IoT平台</h3>
+            <p>通过MQTT接入阿里云物联网平台，使用IoT Studio快速搭建数据看板和手机App。支持物模型定义、规则引擎数据流转、设备影子状态同步。</p>
         </div>
         <div class="card">
-            <div class="card-icon orange">&#127916;</div>
-            <h3>操作示范视频</h3>
-            <p>规范操作流程视频教程：泵启停、调节阀操作、DCS画面组态、PID整定、联锁调试等关键技能点。</p>
+            <div class="card-icon orange">&#128200;</div>
+            <h3>其他云平台</h3>
+            <p>同样支持接入腾讯云IoT Hub、华为云IoTDA、百度天工、OneNET等平台。各平台均提供标准MQTT接入方式，适配PCT-100的JSON数据格式。</p>
         </div>
     </div>
     <div class="highlight-card">
         <span class="hl-icon">&#128161;</span>
         <div>
-            <h3>备赛建议</h3>
-            <p>建议参赛学生每周至少进行4学时实操训练，同步完成理论模拟测试。重点强化PID参数整定、联锁逻辑分析和故障诊断三项核心能力。充分利用HCCT-3000实训装置的模块化优势，逐步从单回路控制过渡到复杂串级/比值控制系统。</p>
+            <h3>开发建议</h3>
+            <p>建议初学者先使用本地Mosquitto进行开发调试，通过MQTTX桌面客户端验证消息交互。确认通信逻辑正确后，再迁移到云平台。PCT-100的MQTT多配置文件功能可方便地在本地测试环境和云端生产环境之间切换，无需反复修改代码。</p>
         </div>
     </div>
 </section>
 
-<section class="section" id="references" style="background: #fff; max-width: 100%;">
+<section class="section" id="tools" style="background: #fff; max-width: 100%;">
     <div style="max-width:1200px;margin:0 auto;">
-        <span class="section-tag">REFERENCES</span>
-        <h2 class="section-title">参考教材与资料</h2>
-        <p class="section-desc">推荐以下教材和参考资料，辅助理论与实践学习。</p>
+        <span class="section-tag">TOOLS</span>
+        <h2 class="section-title">开发工具推荐</h2>
+        <p class="section-desc">以下工具可大幅提升嵌入式开发和调试效率。</p>
         <div class="card-grid">
             <div class="card">
-                <div class="card-icon blue">&#128212;</div>
-                <h3>核心教材</h3>
+                <div class="card-icon blue">&#128736;</div>
+                <h3>开发环境</h3>
                 <ul>
-                    <li>《化工原理》（上/下册）— 柴诚敬 等</li>
-                    <li>《过程控制工程》— 俞金寿 等</li>
-                    <li>《化工仪表及自动化》— 厉玉鸣 等</li>
-                    <li>《集散控制系统原理及应用》— 何衍庆 等</li>
+                    <li>Arduino IDE 2.x — 轻量级，适合入门</li>
+                    <li>VS Code + PlatformIO — 专业级开发体验</li>
+                    <li>ESP-IDF — Espressif官方开发框架</li>
+                    <li>Git + GitHub — 版本控制与代码托管</li>
                 </ul>
             </div>
             <div class="card">
-                <div class="card-icon green">&#128240;</div>
-                <h3>参考标准</h3>
+                <div class="card-icon green">&#128225;</div>
+                <h3>调试工具</h3>
                 <ul>
-                    <li>GB 50650-2011 化工装置管道布置设计规范</li>
-                    <li>HG/T 20637-2017 化工装置自控设计规定</li>
-                    <li>AQ 3013-2008 危险化学品从业单位安全标准化</li>
-                    <li>ISO 5167 差压流量计测量标准</li>
+                    <li>串口助手 (Serial Monitor / Putty / MobaXterm)</li>
+                    <li>MQTTX — 跨平台MQTT桌面调试客户端</li>
+                    <li>Wireshark — 网络抓包分析</li>
+                    <li>逻辑分析仪 — GPIO/I2C/SPI信号分析</li>
+                    <li>万用表 + 示波器 — 硬件调试必备</li>
                 </ul>
             </div>
             <div class="card">
-                <div class="card-icon orange">&#127760;</div>
+                <div class="card-icon orange">&#128214;</div>
                 <h3>在线资源</h3>
                 <ul>
-                    <li>中国大学MOOC — 化工原理课程</li>
-                    <li>学堂在线 — 过程控制工程</li>
-                    <li>Chemical Engineering Online Resources</li>
-                    <li>全国化工设计竞赛官网</li>
+                    <li>Arduino官方文档 (arduino.cc/reference)</li>
+                    <li>ESP32 Arduino Core 文档 (espressif/arduino-esp32)</li>
+                    <li>MQTT v3.1.1 协议规范 (mqtt.org)</li>
+                    <li>Random Nerd Tutorials — ESP32实战教程</li>
+                    <li>GitHub — 开源项目和示例代码</li>
                 </ul>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="advanced">
+    <span class="section-tag">ADVANCED</span>
+    <h2 class="section-title">进阶开发专题</h2>
+    <p class="section-desc">深入探索PCT-100的功能扩展和性能优化方向。</p>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon blue">&#128200;</div>
+            <h3>数据存储与分析</h3>
+            <p>使用InfluxDB时序数据库存储传感器历史数据，配合Grafana构建实时监控仪表盘。利用Python (pandas) 进行数据趋势分析和异常检测建模。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon green">&#128241;</div>
+            <h3>移动端App开发</h3>
+            <p>使用Flutter或React Native开发跨平台移动App，通过MQTT实时监控PCT-100状态。实现推送通知报警、历史数据图表和远程控制功能。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon orange">&#129504;</div>
+            <h3>智能联动</h3>
+            <p>结合Node-RED等低代码工具实现多设备联动场景：温度超标→自动开风扇+推送微信通知；光照不足→自动补光；结合天气预报API预判调控。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon red">&#128273;</div>
+            <h3>安全性加固</h3>
+            <p>实现TLS双向认证的MQTT通信、固件OTA签名验证、安全启动(Secure Boot)、Flash加密存储。符合工业物联网安全最佳实践。</p>
         </div>
     </div>
 </section>
 
 <footer class="footer">
-    <p>&copy; 2026 <span>HCCT-3000</span> 化工控制实训平台 &middot; 实验教学资源</p>
-    <p style="margin-top:6px;">教学相长，实践育人</p>
+    <p>&copy; 2026 <span>PCT-100</span> 温湿度控制器 &middot; 开发资源</p>
+    <p style="margin-top:6px;">开放共享，协作创新</p>
 </footer>
 
 <script>

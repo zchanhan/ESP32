@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>化工控制实训平台 - 首页</title>
+<title>PCT-100 温湿度控制器 - 首页</title>
 <style>
 :root {
-    --primary: #1a5f8a;
-    --primary-dark: #0d3b56;
+    --primary: #0d7c5e;
+    --primary-dark: #064a36;
     --accent: #e8943a;
     --accent-light: #f5b461;
     --bg: #f4f6f9;
@@ -66,7 +66,7 @@ body {
 
 .hero {
     margin-top: 64px;
-    background: linear-gradient(160deg, #0d2b45 0%, #1a5f8a 50%, #1a6fa0 100%);
+    background: linear-gradient(160deg, #053320 0%, #0d7c5e 50%, #0d9068 100%);
     padding: 100px 40px 120px;
     text-align: center;
     position: relative;
@@ -175,21 +175,21 @@ body {
 
 <nav class="navbar" id="navbar">
     <div class="nav-logo">
-        <span class="icon">&#9889;</span> HCCT-3000
+        <span class="icon">&#127777;</span> PCT-100
     </div>
     <ul class="nav-links">
         <li><a href="./index.html" style="color: var(--primary); font-weight: 700;">首页</a></li>
         <li><a href="./product-manual.html">产品说明书</a></li>
         <li><a href="./safety-knowledge.html">安全知识</a></li>
-        <li><a href="./lab-resources.html">实验资源</a></li>
+        <li><a href="./lab-resources.html">开发资源</a></li>
     </ul>
 </nav>
 
 <header class="hero">
     <div class="hero-content">
-        <div class="hero-badge">CHEMICAL CONTROL TRAINING</div>
-        <h1><span>HCCT-3000</span> 化工控制实训平台</h1>
-        <p>综合性化工自动化教学实训资源平台，集成产品文档、安全知识、实验教学资源，为化工类专业师生提供一站式学习支持。</p>
+        <div class="hero-badge">TEMPERATURE &amp; HUMIDITY CONTROL</div>
+        <h1><span>PCT-100</span> 温湿度控制器</h1>
+        <p>基于ESP32的智能温湿度监控设备，集成DHT22传感器、光敏检测、双路继电器控制、RGB状态指示及WiFi/MQTT远程通信，适用于智能温室、机房监控、仓储管理等场景。</p>
     </div>
 </header>
 
@@ -198,21 +198,21 @@ body {
     <p class="section-desc">选择以下模块访问对应的资源页面</p>
     <div class="card-grid">
         <a href="./product-manual.html" class="card">
-            <div class="card-icon blue">&#128214;</div>
+            <div class="card-icon green">&#128214;</div>
             <h3>产品说明书</h3>
-            <p>HCCT-3000化工控制实训装置完整技术文档，包含技术规格、系统组成、工艺流程、实训模块及安全防护体系。</p>
+            <p>PCT-100温湿度控制器完整技术文档，包含硬件规格、引脚定义、系统架构、功能模块说明及通信协议。</p>
             <span class="card-arrow">查看详情 &rarr;</span>
         </a>
         <a href="./safety-knowledge.html" class="card">
             <div class="card-icon orange">&#128737;</div>
-            <h3>化工安全知识</h3>
-            <p>化工实验室及生产现场安全规范，包含安全标识识别、个人防护装备、应急处置流程等关键知识。</p>
+            <h3>安全知识</h3>
+            <p>物联网设备电气安全规范，包含静电防护、接线标准、电源安全、强电隔离及设备安装注意事项。</p>
             <span class="card-arrow">查看详情 &rarr;</span>
         </a>
         <a href="./lab-resources.html" class="card">
-            <div class="card-icon green">&#128300;</div>
-            <h3>实验教学资源</h3>
-            <p>化工原理实验指导、仿真软件教程、操作视频资源及技能大赛备赛资料库。</p>
+            <div class="card-icon blue">&#128300;</div>
+            <h3>开发资源</h3>
+            <p>嵌入式开发教程、Arduino/ESP32编程指南、MQTT协议入门、传感器驱动开发及物联网平台对接文档。</p>
             <span class="card-arrow">查看详情 &rarr;</span>
         </a>
     </div>
@@ -221,34 +221,34 @@ body {
 <section class="section" style="background: #fff; padding-top: 60px; padding-bottom: 60px; max-width: 100%;">
     <div style="max-width:1200px;margin:0 auto;">
         <h2 class="section-title">平台特色</h2>
-        <p class="section-desc">集成理论教学、实践操作、安全培训的一体化学习方案</p>
+        <p class="section-desc">集环境感知、自动控制、远程通信于一体的智能物联网方案</p>
         <div class="feature-grid">
             <div class="feature-item">
-                <div class="feat-icon">&#127891;</div>
-                <h4>理实一体</h4>
-                <p>将化工原理与过程控制知识融入真实工业场景</p>
+                <div class="feat-icon">&#127760;</div>
+                <h4>WiFi/MQTT 联网</h4>
+                <p>支持WiFi无线连接与MQTT协议远程通信，实时上传状态数据并接收云端指令</p>
             </div>
             <div class="feature-item">
                 <div class="feat-icon">&#128736;</div>
-                <h4>工业级标准</h4>
-                <p>关键部件采用国际一线品牌，确保长期稳定运行</p>
+                <h4>双路继电器</h4>
+                <p>独立控制灯光与风扇回路，支持自动/手动双模式切换，物理按键+远程控制</p>
             </div>
             <div class="feature-item">
                 <div class="feat-icon">&#128225;</div>
-                <h4>模块化设计</h4>
-                <p>各单元可独立运行也可联机组成完整工艺流程</p>
+                <h4>模块化架构</h4>
+                <p>FreeRTOS双线程设计，各功能模块独立封装，便于二次开发与功能扩展</p>
             </div>
             <div class="feature-item">
                 <div class="feat-icon">&#128119;</div>
-                <h4>安全优先</h4>
-                <p>多层次安全防护体系，确保教学实训过程零事故</p>
+                <h4>安全可靠</h4>
+                <p>阈值越界报警、RGB状态指示、急停保护、配置持久化存储，确保长期稳定运行</p>
             </div>
         </div>
     </div>
 </section>
 
 <footer class="footer">
-    <p>&copy; 2026 <span>HCCT-3000</span> 化工控制实训平台 &middot; 版权所有</p>
+    <p>&copy; 2026 <span>PCT-100</span> 温湿度控制器 &middot; 版权所有</p>
 </footer>
 
 <script>

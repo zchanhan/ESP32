@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HCCT-3000 化工控制实训装置 - 产品说明书</title>
+<title>PCT-100 温湿度控制器 - 产品说明书</title>
 <style>
 :root {
-    --primary: #1a5f8a;
-    --primary-dark: #0d3b56;
+    --primary: #0d7c5e;
+    --primary-dark: #064a36;
     --accent: #e8943a;
     --accent-light: #f5b461;
     --bg: #f4f6f9;
@@ -68,7 +68,7 @@ body {
 /* Hero */
 .hero {
     margin-top: 64px;
-    background: linear-gradient(160deg, #0d2b45 0%, #1a5f8a 50%, #1a6fa0 100%);
+    background: linear-gradient(160deg, #053320 0%, #0d7c5e 50%, #0d9068 100%);
     padding: 80px 40px 100px;
     text-align: center;
     position: relative;
@@ -166,31 +166,6 @@ body {
 .specs-table td { color: var(--text-light); }
 .specs-table tr:last-child th, .specs-table tr:last-child td { border-bottom: none; }
 
-/* Process Flow */
-.flow-section { background: linear-gradient(180deg, #f8fafb, var(--bg)); }
-.flow-steps {
-    display: flex; justify-content: center; align-items: flex-start;
-    gap: 0; flex-wrap: wrap; margin-top: 32px;
-}
-.flow-step {
-    text-align: center; flex: 1; min-width: 140px; max-width: 200px; position: relative;
-    padding: 20px 10px;
-}
-.flow-step::after {
-    content: '\2192'; position: absolute; right: -12px; top: 50%;
-    transform: translateY(-50%); font-size: 22px; color: var(--accent); font-weight: bold;
-}
-.flow-step:last-child::after { display: none; }
-.flow-num {
-    width: 50px; height: 50px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), #2980b9);
-    color: #fff; display: flex; align-items: center; justify-content: center;
-    font-size: 20px; font-weight: 800; margin: 0 auto 14px;
-    box-shadow: 0 4px 16px rgba(26,95,138,0.3);
-}
-.flow-step h4 { font-size: 15px; font-weight: 700; color: var(--primary-dark); margin-bottom: 6px; }
-.flow-step p { font-size: 12px; color: var(--text-light); }
-
 /* Architecture */
 .diagram {
     background: var(--card); border-radius: var(--radius); padding: 32px;
@@ -249,6 +224,16 @@ body {
 }
 .footer span { color: var(--accent-light); }
 
+/* Pin Table */
+.pin-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+.pin-table th, .pin-table td {
+    padding: 12px 16px; text-align: left; font-size: 14px;
+    border-bottom: 1px solid var(--border);
+}
+.pin-table th { background: #f0faf4; font-weight: 700; color: var(--success); border-right: 1px solid var(--border); }
+.pin-table td { color: var(--text-light); }
+.pin-table tr:last-child th, .pin-table tr:last-child td { border-bottom: none; }
+
 /* Responsive */
 @media (max-width: 768px) {
     .navbar { padding: 0 20px; }
@@ -259,9 +244,6 @@ body {
     .section-title { font-size: 24px; }
     .card-grid { grid-template-columns: 1fr; }
     .specs-table th, .specs-table td { padding: 10px 12px; font-size: 12px; }
-    .flow-steps { flex-direction: column; align-items: center; }
-    .flow-step::after { display: none; }
-    .flow-step { max-width: 100%; }
     .diagram-box { flex-direction: column; }
     .diagram-arrow { transform: rotate(90deg); }
 }
@@ -271,26 +253,26 @@ body {
 
 <nav class="navbar" id="navbar">
     <div class="nav-logo">
-        <span class="icon">&#9889;</span> HCCT-3000
+        <span class="icon">&#127777;</span> PCT-100
     </div>
     <ul class="nav-links">
         <li><a href="./index.html">首页</a></li>
         <li><a href="./product-manual.html" style="color: var(--primary); font-weight: 700;">产品说明书</a></li>
         <li><a href="./safety-knowledge.html">安全知识</a></li>
-        <li><a href="./lab-resources.html">实验资源</a></li>
+        <li><a href="./lab-resources.html">开发资源</a></li>
     </ul>
 </nav>
 
 <header class="hero">
     <div class="hero-content">
         <div class="hero-badge">PRODUCT MANUAL</div>
-        <h1><span>HCCT-3000</span> 化工控制实训装置</h1>
-        <p>集过程控制、仪表调试、DCS系统操作于一体的综合性化工自动化实训平台，满足高等院校及职业院校化工类专业教学与技能竞赛需求。</p>
+        <h1><span>PCT-100</span> 温湿度控制器</h1>
+        <p>基于ESP32的智能环境监控设备，集成温湿度传感、光照检测、双路继电器控制和WiFi/MQTT远程通信功能。</p>
         <div class="hero-features">
-            <div class="hero-feature"><span class="dot"></span> 工业级标准</div>
-            <div class="hero-feature"><span class="dot"></span> 模块化设计</div>
-            <div class="hero-feature"><span class="dot"></span> 真实工艺流程</div>
-            <div class="hero-feature"><span class="dot"></span> 安全环保</div>
+            <div class="hero-feature"><span class="dot"></span> ESP32 双核</div>
+            <div class="hero-feature"><span class="dot"></span> FreeRTOS 多线程</div>
+            <div class="hero-feature"><span class="dot"></span> MQTT 远程控制</div>
+            <div class="hero-feature"><span class="dot"></span> 自动/手动双模式</div>
         </div>
     </div>
 </header>
@@ -298,22 +280,22 @@ body {
 <section class="section" id="overview">
     <span class="section-tag">OVERVIEW</span>
     <h2 class="section-title">产品概述</h2>
-    <p class="section-desc">HCCT-3000型化工控制实训装置是针对化工自动化、过程装备与控制工程等专业教学需求研发的综合实训平台，模拟真实化工生产中的典型单元操作与控制策略。</p>
+    <p class="section-desc">PCT-100型温湿度控制器是一款基于ESP32微控制器的智能物联网设备，集成DHT22温湿度传感器、光敏电阻传感器、双路继电器输出及WS2812 RGB状态指示灯，通过WiFi连接网络并使用MQTT协议与云平台通信，广泛应用于智能温室、机房环境监控、仓储温湿度管理及物联网教学实训等场景。</p>
     <div class="card-grid">
         <div class="card">
-            <div class="card-icon blue">&#127919;</div>
+            <div class="card-icon green">&#127919;</div>
             <h3>设计理念</h3>
-            <p>以"工学结合、理实一体"为核心，将化工原理、仪表自动化、过程控制等课程知识点融合到真实工业场景中，实现"教、学、做"一体化。</p>
+            <p>以"感知—控制—通信"为核心架构，将传感器数据采集、自动控制逻辑、远程通信整合为一体化嵌入式方案，便于二次开发与系统集成。</p>
         </div>
         <div class="card">
             <div class="card-icon orange">&#127981;</div>
             <h3>适用场景</h3>
-            <p>适用于本科院校、高职高专、技师学院等化工类专业的实验教学、课程设计、毕业设计、技能竞赛及企业员工培训。</p>
+            <p>适用于智能温室大棚环境调控、数据中心机房温湿度监控、仓库存储环境管理、物联网教学实训及智能家居DIY项目。</p>
         </div>
         <div class="card">
-            <div class="card-icon green">&#128203;</div>
-            <h3>涵盖课程</h3>
-            <p>化工原理、过程控制工程、仪表及自动化、集散控制系统(DCS)、可编程控制器(PLC)、化工安全技术。</p>
+            <div class="card-icon blue">&#128203;</div>
+            <h3>涵盖技术</h3>
+            <p>嵌入式开发(Arduino/ESP32)、传感器驱动、FreeRTOS实时操作系统、WiFi网络编程、MQTT物联网协议、JSON数据交换。</p>
         </div>
     </div>
 </section>
@@ -321,21 +303,43 @@ body {
 <section class="section" id="specs" style="background: linear-gradient(180deg, #fff, var(--bg)); padding-top: 80px;">
     <span class="section-tag">SPECIFICATIONS</span>
     <h2 class="section-title">技术规格参数</h2>
-    <p class="section-desc">装置严格按照工业标准设计制造，关键部件采用国际一线品牌，确保长期稳定运行。</p>
+    <p class="section-desc">设备选用工业级元器件，关键参数可通过串口或MQTT远程配置，阈值掉电不丢失。</p>
     <div class="specs-section">
         <table class="specs-table">
-            <tr><th>产品型号</th><td>HCCT-3000</td></tr>
-            <tr><th>外形尺寸</th><td>4800 x 1200 x 2200 mm</td></tr>
-            <tr><th>整机功率</th><td>&le; 8.5 kW，AC 380V，50Hz，三相五线制</td></tr>
-            <tr><th>控制方式</th><td>DCS + PLC + 手动旁路</td></tr>
-            <tr><th>操作站</th><td>工业上位机 x 2，21.5寸触控屏</td></tr>
-            <tr><th>仪表配置</th><td>压力变送器、温度变送器、电磁流量计、液位计、pH计、电导率仪</td></tr>
-            <tr><th>执行机构</th><td>气动调节阀、电动调节阀、变频泵、电磁阀</td></tr>
-            <tr><th>工艺介质</th><td>循环水（常温常压），安全环保</td></tr>
-            <tr><th>通讯协议</th><td>Modbus RTU/TCP、Profibus-DP、HART、4-20mA</td></tr>
-            <tr><th>安全防护</th><td>漏电保护、过载保护、急停按钮、液位报警联锁</td></tr>
-            <tr><th>噪声等级</th><td>&le; 65 dB(A)</td></tr>
-            <tr><th>环境要求</th><td>温度 0~40&deg;C，湿度 &le;85%RH</td></tr>
+            <tr><th>产品型号</th><td>PCT-100</td></tr>
+            <tr><th>主控芯片</th><td>ESP32 (双核 Xtensa LX6, 240MHz)</td></tr>
+            <tr><th>温湿度传感器</th><td>DHT22 (温度 ±0.5&deg;C, 湿度 ±2%RH)</td></tr>
+            <tr><th>光照传感器</th><td>光敏电阻 + ADC 采样 (12位, 0-4095)</td></tr>
+            <tr><th>显示屏</th><td>SH1106 OLED, 1.3寸, I2C接口</td></tr>
+            <tr><th>继电器输出</th><td>2路 (灯光GPIO6 / 风扇GPIO7), 支持自动+手动模式</td></tr>
+            <tr><th>状态指示</th><td>WS2812 RGB可编程LED (GPIO0)</td></tr>
+            <tr><th>操作按键</th><td>KEY1 自锁电源开关 (GPIO20) + KEY2 模式切换 (GPIO21)</td></tr>
+            <tr><th>无线通信</th><td>WiFi 802.11 b/g/n (2.4GHz)</td></tr>
+            <tr><th>通信协议</th><td>MQTT v3.1.1 (QoS 0/1), JSON格式负载</td></tr>
+            <tr><th>串口调试</th><td>UART 115200 bps, 支持CLI命令交互</td></tr>
+            <tr><th>默认光照阈值</th><td>900 (ADC值, 可配置范围 0-4095)</td></tr>
+            <tr><th>默认温度阈值</th><td>35.0&deg;C (可配置范围 -40~125&deg;C)</td></tr>
+            <tr><th>供电方式</th><td>USB 5V / 外接5V直流电源</td></tr>
+            <tr><th>固件架构</th><td>FreeRTOS双任务 (WiFi/MQTT线程 + LED显示线程)</td></tr>
+            <tr><th>配置存储</th><td>Preferences (NVS Flash), 掉电不丢失</td></tr>
+        </table>
+    </div>
+</section>
+
+<section class="section" id="pins">
+    <span class="section-tag">PINOUT</span>
+    <h2 class="section-title">引脚定义</h2>
+    <p class="section-desc">以下为PCT-100各外设与ESP32 GPIO的对应关系，供二次开发及硬件调试参考。</p>
+    <div class="specs-section">
+        <table class="pin-table">
+            <tr><th>GPIO0</th><td>WS2812 RGB LED 数据引脚</td></tr>
+            <tr><th>GPIO6</th><td>灯光继电器控制输出 (高电平有效)</td></tr>
+            <tr><th>GPIO7</th><td>风扇继电器控制输出 (高电平有效)</td></tr>
+            <tr><th>GPIO20</th><td>KEY1 自锁电源开关输入 (轮询检测)</td></tr>
+            <tr><th>GPIO21</th><td>KEY2 模式切换按键输入 (中断检测, 支持长按/短按)</td></tr>
+            <tr><th>I2C (SDA/SCL)</th><td>SH1106 OLED 显示屏</td></tr>
+            <tr><th>ADC</th><td>光敏电阻分压采样</td></tr>
+            <tr><th>GPIO (DHT22)</th><td>DHT22 温湿度传感器数据引脚</td></tr>
         </table>
     </div>
 </section>
@@ -343,27 +347,27 @@ body {
 <section class="section" id="system">
     <span class="section-tag">SYSTEM</span>
     <h2 class="section-title">系统组成</h2>
-    <p class="section-desc">装置采用模块化积木式架构，各单元可独立运行也可联机组成完整工艺流程。</p>
+    <p class="section-desc">设备采用模块化软件架构，各功能模块独立封装，通过FreeRTOS双线程调度实现高效并发处理。</p>
     <div class="card-grid">
         <div class="card">
-            <div class="card-icon blue">&#128738;</div>
-            <h3>工艺设备单元</h3>
-            <p>不锈钢储罐、反应釜(夹套加热/冷却)、列管式换热器、填料精馏塔、离心泵、真空泵、管道阀门系统。</p>
+            <div class="card-icon blue">&#127760;</div>
+            <h3>WiFi管理模块</h3>
+            <p>非阻塞状态机设计，支持自动扫描、密码输入、配置保存/清除、断线自动重连。首次使用通过串口选择WiFi网络并输入密码。</p>
         </div>
         <div class="card">
             <div class="card-icon orange">&#128225;</div>
-            <h3>检测仪表单元</h3>
-            <p>压力/差压变送器、Pt100+热电偶温度传感器、电磁流量计、超声波液位计、pH在线分析仪、电导率仪。</p>
+            <h3>MQTT通信模块</h3>
+            <p>基于PubSubClient库，支持多配置文件管理（生产/测试环境一键切换）、定时状态上报、JSON格式指令接收与解析。</p>
         </div>
         <div class="card">
-            <div class="card-icon green">&#9881;</div>
-            <h3>执行机构单元</h3>
-            <p>气动薄膜调节阀(西门子定位器)、电动调节阀、ABB变频器、电磁开关阀、可控硅调功器。</p>
+            <div class="card-icon green">&#127777;</div>
+            <h3>传感器模块</h3>
+            <p>DHT22温湿度传感器驱动 + 光敏电阻ADC采样。温度精度±0.5°C，光照采样值0-4095，支持阈值越界自动报警。</p>
         </div>
         <div class="card">
-            <div class="card-icon red">&#128421;</div>
-            <h3>控制操作单元</h3>
-            <p>DCS控制柜(冗余CPU)、西门子S7-1500 PLC、工业上位机、触控HMI面板、工业以太网交换机、UPS电源。</p>
+            <div class="card-icon red">&#9881;</div>
+            <h3>控制执行模块</h3>
+            <p>双路继电器分别控制灯光与风扇。自动模式下根据传感器阈值自动开关；手动模式下通过按键或MQTT远程独立控制。</p>
         </div>
     </div>
 </section>
@@ -372,125 +376,124 @@ body {
     <div class="diagram">
         <div class="diagram-title">控制系统架构示意图</div>
         <div class="diagram-box">
-            <div class="diagram-node sensor">检测仪表层<br><small>温度、压力、流量、液位</small></div>
+            <div class="diagram-node sensor">感知层<br><small>DHT22 · 光敏 · ADC</small></div>
             <div class="diagram-arrow">&rarr;</div>
-            <div class="diagram-node controller">控制运算层<br><small>DCS / PLC / PID</small></div>
+            <div class="diagram-node controller">控制运算层<br><small>ESP32 · FreeRTOS · 阈值判断</small></div>
             <div class="diagram-arrow">&rarr;</div>
-            <div class="diagram-node actuator">执行机构层<br><small>调节阀、变频器、开关阀</small></div>
+            <div class="diagram-node actuator">执行层<br><small>灯光继电器 · 风扇继电器</small></div>
             <div class="diagram-arrow">&rarr;</div>
-            <div class="diagram-node">工艺对象层<br><small>反应釜、精馏塔、换热器</small></div>
+            <div class="diagram-node">通信层<br><small>WiFi · MQTT · 云平台</small></div>
         </div>
-        <p style="margin-top:16px;font-size:13px;color:var(--text-light);">经典四层闭环控制架构 &mdash; 检测 &rarr; 运算 &rarr; 执行 &rarr; 工艺 &rarr; 反馈</p>
+        <p style="margin-top:16px;font-size:13px;color:var(--text-light);">感知 → 判断 → 执行 → 上报，完整的物联网闭环架构</p>
     </div>
 </section>
 
-<section class="flow-section" id="process">
-    <div class="section" style="padding-bottom:60px;">
-        <span class="section-tag">PROCESS</span>
-        <h2 class="section-title">典型工艺流程</h2>
-        <p class="section-desc">装置可模拟多种化工典型单元操作，以下为连续反应-精馏分离联机工艺流程。</p>
-        <div class="flow-steps">
-            <div class="flow-step">
-                <div class="flow-num">1</div>
-                <h4>原料进料</h4>
-                <p>变频泵定量输送<br>电磁流量计计量<br>流量定值控制</p>
-            </div>
-            <div class="flow-step">
-                <div class="flow-num">2</div>
-                <h4>预热换热</h4>
-                <p>列管换热器预热<br>温度分程控制<br>热回收节能</p>
-            </div>
-            <div class="flow-step">
-                <div class="flow-num">3</div>
-                <h4>反应釜</h4>
-                <p>夹套控温反应<br>搅拌转速调节<br>串级-比值控制</p>
-            </div>
-            <div class="flow-step">
-                <div class="flow-num">4</div>
-                <h4>精馏分离</h4>
-                <p>填料塔精馏<br>回流比自动控制<br>塔顶/塔釜温度控制</p>
-            </div>
-            <div class="flow-step">
-                <div class="flow-num">5</div>
-                <h4>产品收集</h4>
-                <p>冷凝冷却<br>产品罐液位控制<br>质量指标检测</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="training">
-    <span class="section-tag">TRAINING</span>
-    <h2 class="section-title">实训项目模块</h2>
-    <p class="section-desc">涵盖基础认知、仪表调试、控制策略、系统集成四大层级，共20+实训项目。</p>
+<section class="section" id="modes">
+    <span class="section-tag">OPERATION</span>
+    <h2 class="section-title">工作模式</h2>
+    <p class="section-desc">设备支持自动与手动两种工作模式，通过KEY2按键或MQTT远程指令切换。</p>
     <div class="card-grid">
         <div class="card">
-            <div class="card-icon blue">&#128214;</div>
-            <h3>基础认知模块</h3>
-            <p>1. 化工工艺流程认知<br>2. 仪表类型识别与选型<br>3. 调节阀结构与原理<br>4. P&amp;ID图识读与绘制</p>
+            <div class="card-icon green">&#128259;</div>
+            <h3>自动模式（默认）</h3>
+            <p>系统根据预设阈值自动控制：当光照ADC值超过光照阈值时自动开灯；当温度超过温度阈值时自动开启风扇。两个阈值均可通过串口或MQTT远程调整并持久化保存。</p>
         </div>
         <div class="card">
-            <div class="card-icon orange">&#128295;</div>
-            <h3>仪表调试模块</h3>
-            <p>5. 压力变送器标定<br>6. 温度传感器校验<br>7. 流量计安装与调试<br>8. 调节阀定位器校准</p>
+            <div class="card-icon orange">&#128083;</div>
+            <h3>手动模式</h3>
+            <p>通过KEY2按键循环切换4种状态：全关 → 风扇开 → 灯光开 → 全开。也可通过MQTT下发 set_relay 指令独立控制每路继电器。RGB LED实时指示当前模式与报警状态。</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="mqtt-protocol" style="background: #fff;">
+    <span class="section-tag">MQTT PROTOCOL</span>
+    <h2 class="section-title">MQTT 通信协议</h2>
+    <p class="section-desc">设备通过MQTT与云端交互，以下为消息主题定义和控制指令格式（设备ID为配置值，非固定）。</p>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon blue">&#128228;</div>
+            <h3>上行主题（设备→云端）</h3>
+            <p style="font-family:monospace;background:#f0f0f0;padding:8px;border-radius:6px;">chemctrl/{设备ID}/status</p>
+            <p style="margin-top:10px;">JSON格式定时上报，包含温度、光照、模式、继电器状态、当前阈值等信息。</p>
         </div>
         <div class="card">
-            <div class="card-icon green">&#128202;</div>
-            <h3>控制策略模块</h3>
-            <p>9. 单回路PID参数整定<br>10. 串级控制系统<br>11. 比值控制系统<br>12. 前馈-反馈复合控制<br>13. 分程/选择控制</p>
+            <div class="card-icon green">&#128229;</div>
+            <h3>下行主题（云端→设备）</h3>
+            <p style="font-family:monospace;background:#f0f0f0;padding:8px;border-radius:6px;">chemctrl/{设备ID}/command</p>
+            <p style="margin-top:10px;">支持的指令：set_relay（控制继电器）、set_mode（切换模式）、get_status（查询状态）、set_threshold（设置阈值）、reboot（重启）。</p>
         </div>
-        <div class="card">
-            <div class="card-icon red">&#127759;</div>
-            <h3>系统集成模块</h3>
-            <p>14. DCS组态与操作<br>15. PLC编程与联锁<br>16. 工业通讯网络配置<br>17. 上位机SCADA组态<br>18. 报警与联锁系统设计</p>
-        </div>
+    </div>
+</section>
+
+<section class="section" id="serial-cli">
+    <span class="section-tag">SERIAL CLI</span>
+    <h2 class="section-title">串口命令行</h2>
+    <p class="section-desc">通过USB串口（115200bps）连接设备，可使用以下CLI命令进行调试和配置。</p>
+    <div class="specs-section">
+        <table class="pin-table">
+            <tr><th>clearwifi</th><td>清除已保存的WiFi配置，下次启动重新扫描</td></tr>
+            <tr><th>showwifi</th><td>显示当前WiFi连接状态和IP地址</td></tr>
+            <tr><th>reboot</th><td>重启设备</td></tr>
+            <tr><th>help</th><td>显示串口命令帮助</td></tr>
+            <tr><th>mqtt set server &lt;地址&gt;</th><td>设置MQTT服务器地址</td></tr>
+            <tr><th>mqtt set port &lt;端口&gt;</th><td>设置MQTT端口号</td></tr>
+            <tr><th>mqtt set username &lt;用户名&gt;</th><td>设置MQTT认证用户名</td></tr>
+            <tr><th>mqtt set password &lt;密码&gt;</th><td>设置MQTT认证密码</td></tr>
+            <tr><th>mqtt save</th><td>保存当前MQTT配置到Flash</td></tr>
+            <tr><th>mqtt show</th><td>显示当前MQTT配置信息（密码不显示明文）</td></tr>
+            <tr><th>mqtt reconnect</th><td>断开并重新连接MQTT服务器</td></tr>
+            <tr><th>mqtt config save &lt;名称&gt;</th><td>将当前配置另存为命名配置文件</td></tr>
+            <tr><th>mqtt config load &lt;名称&gt;</th><td>加载指定的配置文件</td></tr>
+            <tr><th>mqtt config list</th><td>列出所有已保存的配置文件</td></tr>
+        </table>
     </div>
 </section>
 
 <section class="section" id="safety" style="background:#fff;">
     <span class="section-tag">SAFETY</span>
-    <h2 class="section-title">安全防护体系</h2>
-    <p class="section-desc">装置严格遵循化工安全规范，构建多层次安全防护体系，确保教学实训过程零事故。</p>
+    <h2 class="section-title">安全防护设计</h2>
+    <p class="section-desc">设备在硬件和软件层面均设计了安全防护机制，确保长期可靠运行。</p>
     <div class="safety-grid">
         <div class="safety-item">
             <span class="safety-icon">&#9889;</span>
             <div>
                 <h4>电气安全</h4>
-                <p>漏电保护开关、过载断路器、接地保护、急停按钮(操作台+现场双冗余)、UPS断电保护</p>
-            </div>
-        </div>
-        <div class="safety-item">
-            <span class="safety-icon">&#128167;</span>
-            <div>
-                <h4>工艺安全</h4>
-                <p>以循环水为介质(无化学品)、压力安全阀泄压、液位高低限报警联锁、温度超限自动切断加热</p>
+                <p>继电器输出与主控电路光耦隔离；电源输入端加装自恢复保险丝；接线端子采用防呆设计，防止反接。</p>
             </div>
         </div>
         <div class="safety-item">
             <span class="safety-icon">&#128276;</span>
             <div>
-                <h4>报警联锁</h4>
-                <p>声光报警器、DCS报警管理、SIS安全仪表功能、关键参数硬联锁保护、操作员二次确认机制</p>
+                <h4>阈值报警</h4>
+                <p>温度/光照越界时RGB LED变色报警（红色=温度越界，黄色=光照越界，紫色=双重越界）；同时通过MQTT上报报警状态。</p>
             </div>
         </div>
         <div class="safety-item">
-            <span class="safety-icon">&#129519;</span>
+            <span class="safety-icon">&#128273;</span>
             <div>
-                <h4>消防应急</h4>
-                <p>可燃气体检测报警、烟感探测器、自动喷淋系统(预留接口)、灭火器配置、应急疏散标识</p>
+                <h4>通信安全</h4>
+                <p>MQTT连接支持用户名/密码认证；WiFi密码和MQTT凭证加密存储于NVS分区；串口调试命令仅本地有效。</p>
+            </div>
+        </div>
+        <div class="safety-item">
+            <span class="safety-icon">&#128259;</span>
+            <div>
+                <h4>故障恢复</h4>
+                <p>WiFi断线自动重连；MQTT断线自动重连（间隔5秒）；Watchdog定时器防止程序死锁；配置数据CRC校验。</p>
             </div>
         </div>
     </div>
 </section>
 
 <section class="cta-section">
-    <h2>获取更多产品信息</h2>
-    <p>如需详细技术方案、配置清单及报价，请联系我们的技术团队</p>
-    <a href="#" class="btn-cta">联系我们</a>
+    <h2>获取更多技术资料</h2>
+    <p>如需源代码、电路图或二次开发技术支持，请查看开发资源页面</p>
+    <a href="./lab-resources.html" class="btn-cta">开发资源</a>
 </section>
 
 <footer class="footer">
-    <p>&copy; 2026 <span>HCCT-3000</span> 化工控制实训装置 &middot; 产品说明书</p>
+    <p>&copy; 2026 <span>PCT-100</span> 温湿度控制器 &middot; 产品说明书</p>
     <p style="margin-top:6px;">技术规格如有变更恕不另行通知，本手册仅供产品介绍参考</p>
 </footer>
 

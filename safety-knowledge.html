@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>化工安全知识 - HCCT-3000 实训平台</title>
+<title>安全知识 - PCT-100 温湿度控制器</title>
 <style>
 :root {
-    --primary: #1a5f8a;
-    --primary-dark: #0d3b56;
+    --primary: #0d7c5e;
+    --primary-dark: #064a36;
     --accent: #e8943a;
     --accent-light: #f5b461;
     --bg: #f4f6f9;
@@ -194,79 +194,121 @@ body {
 
 <nav class="navbar" id="navbar">
     <div class="nav-logo">
-        <span class="icon">&#9889;</span> HCCT-3000
+        <span class="icon">&#127777;</span> PCT-100
     </div>
     <ul class="nav-links">
         <li><a href="./index.html">首页</a></li>
         <li><a href="./product-manual.html">产品说明书</a></li>
         <li><a href="./safety-knowledge.html" style="color: var(--danger); font-weight: 700;">安全知识</a></li>
-        <li><a href="./lab-resources.html">实验资源</a></li>
+        <li><a href="./lab-resources.html">开发资源</a></li>
     </ul>
 </nav>
 
 <header class="hero">
     <div class="hero-content">
-        <div class="hero-badge">CHEMICAL SAFETY</div>
-        <h1>化工<span>安全知识</span></h1>
-        <p>掌握化工实验室及生产现场的安全规范与应急处置技能，树立"安全第一"的职业素养。</p>
+        <div class="hero-badge">ELECTRONICS SAFETY</div>
+        <h1>电子与<span>物联网安全</span></h1>
+        <p>掌握嵌入式开发和物联网设备部署中的电气安全规范与安全操作技能，树立"安全先行"的工作习惯。</p>
     </div>
 </header>
 
-<section class="section" id="ppe">
-    <span class="section-tag">PPE</span>
-    <h2 class="section-title">个人防护装备</h2>
-    <p class="section-desc">进入化工实验或生产区域前，必须正确穿戴个人防护装备（Personal Protective Equipment），有效降低职业危害风险。</p>
+<section class="section" id="esd">
+    <span class="section-tag">ESD</span>
+    <h2 class="section-title">静电防护</h2>
+    <p class="section-desc">静电放电（ESD）是电子元器件损坏的主要原因之一，开发调试时必须做好静电防护措施。</p>
     <div class="card-grid">
         <div class="card">
-            <div class="card-icon red">&#128083;</div>
-            <h3>头部防护</h3>
-            <p>安全帽可防止坠落物击中头部，化工专用安全帽需具备耐酸碱腐蚀性能。进入装置区及施工区必须全程佩戴。</p>
+            <div class="card-icon red">&#9889;</div>
+            <h3>静电危害认知</h3>
+            <p>人体可产生高达数千伏的静电，而ESP32等CMOS器件对数百伏静电即敏感。静电放电可导致芯片立即失效或潜在损伤（缩短寿命）。干燥环境（湿度<30%）静电风险极高。</p>
         </div>
         <div class="card">
-            <div class="card-icon blue">&#128064;</div>
-            <h3>眼部/面部防护</h3>
-            <p>防护眼镜或面罩可防止化学品飞溅、粉尘颗粒及有害光线对眼睛的伤害。操作腐蚀性物质时必须佩戴护目镜。</p>
+            <div class="card-icon blue">&#128083;</div>
+            <h3>防静电手环</h3>
+            <p>接触PCB板或元器件前必须佩戴防静电手环并可靠接地。手环内阻约1MΩ，确保安全泄放静电的同时防止触电。每日使用前检查手环导通性。</p>
         </div>
         <div class="card">
-            <div class="card-icon orange">&#129505;</div>
-            <h3>手部防护</h3>
-            <p>根据接触化学品类型选择相应防护手套——丁腈手套耐有机溶剂，氯丁手套耐酸碱，厚橡胶手套适用强腐蚀性物料。</p>
+            <div class="card-icon orange">&#128736;</div>
+            <h3>防静电工作台</h3>
+            <p>使用防静电桌垫并接地；存放IC芯片使用防静电包装或防静电泡沫；避免在化纤地毯、塑料椅等易产生静电的环境中操作。</p>
         </div>
         <div class="card">
-            <div class="card-icon green">&#128739;</div>
-            <h3>防护服</h3>
-            <p>实验服或防化服应选择阻燃、防静电面料。接触强酸强碱时需穿戴防酸碱化学防护服及防化靴。</p>
-        </div>
-        <div class="card">
-            <div class="card-icon red">&#128066;</div>
-            <h3>呼吸防护</h3>
-            <p>粉尘环境使用防尘口罩（N95及以上）；有毒气体环境使用防毒面具配合相应滤毒盒；缺氧环境需使用正压式空气呼吸器。</p>
-        </div>
-        <div class="card">
-            <div class="card-icon blue">&#128263;</div>
-            <h3>听力防护</h3>
-            <p>高噪声区域（如压缩机、泵区）需佩戴耳塞或耳罩，将噪声暴露降至85 dB(A)以下，防止职业性噪声聋。</p>
+            <div class="card-icon green">&#127777;</div>
+            <h3>环境控制</h3>
+            <p>保持工作区湿度在40%-60%之间，可用加湿器调节。使用离子风机中和绝缘体表面电荷。冬季干燥季节尤其注意加强防护措施。</p>
         </div>
     </div>
 </section>
 
-<section class="section" id="signs" style="background: #fff; max-width: 100%;">
+<section class="section" id="electrical" style="background: #fff; max-width: 100%;">
     <div style="max-width:1200px;margin:0 auto;">
-        <span class="section-tag">SAFETY SIGNS</span>
-        <h2 class="section-title">安全标识识别</h2>
-        <p class="section-desc">化工场所广泛使用标准化安全标识，正确理解和遵守标识指示是保障安全的基本要求。</p>
+        <span class="section-tag">ELECTRICAL SAFETY</span>
+        <h2 class="section-title">电气安全规范</h2>
+        <p class="section-desc">PCT-100设备涉及低压直流和继电器控制的交流回路，需严格遵守电气安全操作规程。</p>
         <table class="info-table">
-            <tr><th>&#128308; 禁止标识（红色）</th><td>禁止烟火、禁止吸烟、禁止入内、禁止合闸、禁止触摸、禁止堆放</td></tr>
-            <tr><th>&#9888; 警告标识（黄色）</th><td>注意安全、当心火灾、当心爆炸、当心中毒、当心腐蚀、当心触电</td></tr>
-            <tr><th>&#128309; 指令标识（蓝色）</th><td>必须戴安全帽、必须戴防护手套、必须穿防护服、必须戴防毒面具</td></tr>
-            <tr><th>&#128994; 提示标识（绿色）</th><td>紧急出口、安全通道、急救站、洗眼器位置、灭火器位置</td></tr>
+            <tr><th>&#128308; 强电隔离</th><td>继电器输出端连接的交流负载（灯具、风扇等）必须与低压控制电路保持物理隔离；接线端子裸露部分需加装绝缘护套。</td></tr>
+            <tr><th>&#9888; 电源规范</th><td>使用符合安规认证的5V直流电源适配器；禁止使用破损的USB线缆；电源接入前确认电压极性和额定电流匹配。</td></tr>
+            <tr><th>&#128309; 接线要求</th><td>所有接线必须牢固可靠，避免虚接发热；多股线需上锡或压接端子；不同电压等级的线路分开走线并做标识。</td></tr>
+            <tr><th>&#128994; 上电前检查</th><td>通电前用万用表确认无短路；检查所有连接器极性正确；首次上电建议使用带限流保护的实验电源。</td></tr>
         </table>
         <div class="warning-box">
             <span class="warn-icon">&#9888;</span>
             <div>
                 <h3>重要提醒</h3>
-                <p>进入任何化工实验或生产区域前，务必先观察并牢记所有安全标识位置。安全标识不是装饰品，而是生命安全的保障线。发现标识损坏或缺失应立即报告。</p>
+                <p>继电器控制交流负载（如220V灯具）属于强电操作，必须由具备电工资质的人员进行安装接线。调试时务必断开交流电源，确认继电器触点无高压残留后再触碰电路板。任何时候不得用湿手操作通电设备。</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="iot-security">
+    <span class="section-tag">IOT SECURITY</span>
+    <h2 class="section-title">物联网安全最佳实践</h2>
+    <p class="section-desc">物联网设备接入网络后面临各类安全威胁，以下措施可有效降低设备被攻击的风险。</p>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon red">&#128274;</div>
+            <h3>认证与凭证管理</h3>
+            <ul>
+                <li>MQTT务必启用用户名/密码认证</li>
+                <li>使用强密码（至少12位，含大小写+数字+符号）</li>
+                <li>WiFi密码和MQTT凭证加密存储于NVS分区</li>
+                <li>不要在代码中硬编码密码，使用配置文件管理</li>
+                <li>定期更换通信凭证</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-icon orange">&#127758;</div>
+            <h3>网络安全</h3>
+            <ul>
+                <li>设备连接专用IoT网络，与办公/生产网络隔离</li>
+                <li>路由器启用MAC地址过滤</li>
+                <li>使用WPA2/WPA3加密的WiFi，禁用WEP</li>
+                <li>关闭路由器WPS功能</li>
+                <li>MQTT服务器部署防火墙，限制来源IP</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-icon blue">&#128187;</div>
+            <h3>固件安全</h3>
+            <ul>
+                <li>关闭不必要的串口调试输出（生产环境）</li>
+                <li>启用ESP32 Secure Boot防止固件篡改</li>
+                <li>使用Flash Encryption保护固件知识产权</li>
+                <li>OTA更新时验证固件签名</li>
+                <li>禁用Telnet和不安全的调试接口</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-icon green">&#128221;</div>
+            <h3>数据安全</h3>
+            <ul>
+                <li>MQTT通信使用TLS/SSL加密（MQTT over TLS）</li>
+                <li>敏感数据不在串口日志中明文输出</li>
+                <li>设备ID不包含地理位置等敏感信息</li>
+                <li>定期审查MQTT主题权限，遵循最小权限原则</li>
+                <li>生产环境禁用mqtt show等调试命令</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -274,48 +316,48 @@ body {
 <section class="section" id="emergency">
     <span class="section-tag">EMERGENCY</span>
     <h2 class="section-title">应急处置流程</h2>
-    <p class="section-desc">掌握常见安全事故的应急处置方法，关键时刻能够保护自己和他人生命安全。</p>
+    <p class="section-desc">掌握常见电气和电子设备事故的应急处置方法，关键时刻能够保护自己和设备安全。</p>
     <div class="step-grid">
         <div class="step-card">
             <div class="step-num">1</div>
             <div class="step-content">
-                <h4>化学品溅入眼睛</h4>
-                <p>立即使用洗眼器或清水持续冲洗至少15分钟，翻开眼睑确保冲洗充分，同时呼叫他人协助拨打急救电话。</p>
+                <h4>设备冒烟或异味</h4>
+                <p>立即断开电源适配器（拔插头而非拔USB端）；勿用水灭火；使用二氧化碳灭火器；待设备完全冷却后再检查短路点。</p>
             </div>
         </div>
         <div class="step-card">
             <div class="step-num">2</div>
             <div class="step-content">
-                <h4>化学品皮肤接触</h4>
-                <p>迅速脱去污染衣物，用大量清水冲洗接触部位至少15分钟。禁止使用溶剂擦洗，冲洗后就医检查。</p>
+                <h4>人员触电</h4>
+                <p>首先切断总电源开关；不可直接用手拉拽触电者；用干燥木棍或绝缘物将触电者与电源分离；检查呼吸心跳，必要时实施心肺复苏并拨打急救电话。</p>
             </div>
         </div>
         <div class="step-card">
             <div class="step-num">3</div>
             <div class="step-content">
-                <h4>小型火灾扑救</h4>
-                <p>在火势可控时，使用灭火器对准火焰根部喷射。电器火灾先用二氧化碳或干粉灭火器，切忌用水。火势失控立即撤离并报警。</p>
+                <h4>芯片过热烧毁</h4>
+                <p>立即断电；检查是否有接线错误导致短路（如电源反接、GPIO直接接VCC/GND）；用万用表排查PCB短路点；更换损坏芯片前确认外围电路正常。</p>
             </div>
         </div>
         <div class="step-card">
             <div class="step-num">4</div>
             <div class="step-content">
-                <h4>有毒气体泄漏</h4>
-                <p>立即屏住呼吸撤离至上风向安全区域，启动通风系统。若有人中毒昏迷，施救者须佩戴防毒面具后方可进入救援。</p>
+                <h4>设备被远程入侵</h4>
+                <p>立即从路由器端断开设备网络连接；修改MQTT服务器密码；检查设备日志确认入侵途径；更新固件修补安全漏洞；恢复出厂配置后重新安全部署。</p>
             </div>
         </div>
         <div class="step-card">
             <div class="step-num">5</div>
             <div class="step-content">
-                <h4>大面积火灾/爆炸</h4>
-                <p>立即按下紧急疏散警报，沿安全通道迅速撤离至指定集合点。撤离时弯腰低姿（烟雾上升），用湿布捂住口鼻，切勿乘坐电梯。</p>
+                <h4>锂电池异常</h4>
+                <p>如使用锂电池供电，发现电池鼓包、严重发热、漏液时：立即断电，将电池移至室外防火容器中；勿刺破或挤压电池；使用沙土覆盖灭火，勿用水。</p>
             </div>
         </div>
         <div class="step-card">
             <div class="step-num">6</div>
             <div class="step-content">
-                <h4>人员触电事故</h4>
-                <p>首先切断电源，不可直接触碰触电者。用绝缘物体（干燥木棍等）将触电者与电源分离，检查呼吸心跳，必要时实施心肺复苏。</p>
+                <h4>水浸设备</h4>
+                <p>立即断电；用干燥吸水布擦除表面水分；将设备置于干燥通风处自然晾干至少24小时（勿用热风机）；确认完全干燥后再通电测试。</p>
             </div>
         </div>
     </div>
@@ -324,40 +366,42 @@ body {
 <section class="section" id="rules" style="background: #fff; max-width: 100%;">
     <div style="max-width:1200px;margin:0 auto;">
         <span class="section-tag">LAB RULES</span>
-        <h2 class="section-title">实验室安全守则</h2>
-        <p class="section-desc">了解并遵守实验室基本安全规范，养成良好的实验操作习惯。</p>
+        <h2 class="section-title">电子实验室安全守则</h2>
+        <p class="section-desc">养成良好的电子实验操作习惯，确保人身安全和设备完好。</p>
         <div class="card-grid">
             <div class="card">
                 <div class="card-icon red">&#10060;</div>
                 <h3>严禁行为</h3>
                 <ul>
-                    <li>实验室内饮食、吸烟或存放食品</li>
-                    <li>独自一人进行危险实验操作</li>
-                    <li>将实验化学品带出实验室</li>
-                    <li>使用不明标签的化学品</li>
-                    <li>随意混合未知化学试剂</li>
+                    <li>带电焊接或更换元器件</li>
+                    <li>使用超过额定电压/电流的电源供电</li>
+                    <li>在潮湿环境中操作通电设备</li>
+                    <li>将金属工具随意放在通电的PCB上</li>
+                    <li>未经检查即使用自制高压电路</li>
+                    <li>将GPIO引脚直接连接高于3.3V的电压</li>
                 </ul>
             </div>
             <div class="card">
                 <div class="card-icon green">&#9989;</div>
                 <h3>必须遵守</h3>
                 <ul>
-                    <li>实验前预习操作流程和安全注意事项</li>
-                    <li>全程穿戴规定的个人防护装备</li>
-                    <li>操作通风橱内进行有毒有害气体实验</li>
-                    <li>实验完毕清理台面，洗手消毒</li>
-                    <li>废液分类收集至指定容器</li>
+                    <li>实验前检查工具和仪器是否完好</li>
+                    <li>焊接时开启排烟风扇，佩戴防护眼镜</li>
+                    <li>使用隔离变压器或带保护功能的实验电源</li>
+                    <li>实验完毕关闭所有电源并整理工作台</li>
+                    <li>废弃电子元器件分类投放至指定回收箱</li>
+                    <li>GPIO外接设备时确认电平兼容（3.3V逻辑）</li>
                 </ul>
             </div>
             <div class="card">
                 <div class="card-icon blue">&#8505;</div>
                 <h3>应急准备</h3>
                 <ul>
-                    <li>熟记实验室紧急出口和集合点位置</li>
-                    <li>了解灭火器、洗眼器、急救箱位置</li>
-                    <li>牢记紧急联系电话和报警方式</li>
-                    <li>参与定期安全演练和培训</li>
-                    <li>发现安全隐患及时上报</li>
+                    <li>熟记实验室总电源开关和灭火器位置</li>
+                    <li>工作区域配备小型二氧化碳灭火器</li>
+                    <li>急救箱备有烫伤膏和创可贴</li>
+                    <li>知晓最近的紧急出口和集合点</li>
+                    <li>保存维修技术人员和物业电工电话</li>
                 </ul>
             </div>
         </div>
@@ -365,8 +409,8 @@ body {
 </section>
 
 <footer class="footer">
-    <p>&copy; 2026 <span>HCCT-3000</span> 化工控制实训平台 &middot; 化工安全知识</p>
-    <p style="margin-top:6px;">安全第一，预防为主，综合治理</p>
+    <p>&copy; 2026 <span>PCT-100</span> 温湿度控制器 &middot; 安全知识</p>
+    <p style="margin-top:6px;">安全第一，预防为主，规范操作</p>
 </footer>
 
 <script>
