@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实验教学资源 - HCCT-3000 实训平台</title>
+<style>
+:root {
+    --primary: #1a5f8a;
+    --primary-dark: #0d3b56;
+    --accent: #e8943a;
+    --accent-light: #f5b461;
+    --bg: #f4f6f9;
+    --card: #ffffff;
+    --text: #2c3e50;
+    --text-light: #5a6c7d;
+    --border: #dce3ea;
+    --success: #27ae60;
+    --danger: #e74c3c;
+    --info: #3498db;
+    --radius: 12px;
+    --shadow: 0 2px 16px rgba(0,0,0,0.06);
+    --shadow-hover: 0 8px 32px rgba(0,0,0,0.10);
+    --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    transition: var(--transition);
+}
+.navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.nav-logo {
+    font-size: 20px; font-weight: 700; color: var(--primary);
+    letter-spacing: 1px; display: flex; align-items: center; gap: 10px;
+}
+.nav-logo .icon { font-size: 28px; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+    text-decoration: none; color: var(--text-light); font-size: 14px; font-weight: 500;
+    transition: var(--transition); position: relative; padding: 4px 0;
+}
+.nav-links a::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+    background: var(--accent); transition: var(--transition);
+}
+.nav-links a:hover { color: var(--primary); }
+.nav-links a:hover::after { width: 100%; }
+
+.hero {
+    margin-top: 64px;
+    background: linear-gradient(160deg, #0d3b2e 0%, #1a6b4e 50%, #27ae60 100%);
+    padding: 70px 40px 90px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 60%, rgba(255,255,255,0.04) 0%, transparent 60%),
+                radial-gradient(circle at 70% 30%, rgba(255,255,255,0.03) 0%, transparent 50%);
+    animation: heroPulse 8s ease-in-out infinite;
+}
+@keyframes heroPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+.hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.hero-badge {
+    display: inline-block; background: rgba(255,255,255,0.15); color: #c8f7d5;
+    padding: 6px 20px; border-radius: 50px; font-size: 13px; letter-spacing: 3px;
+    margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.2);
+}
+.hero h1 {
+    font-size: 40px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: 2px;
+}
+.hero h1 span { color: #c8f7d5; }
+.hero p {
+    font-size: 17px; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto;
+}
+
+.section {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section-tag {
+    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 3px;
+    color: var(--success); text-transform: uppercase; margin-bottom: 12px;
+}
+.section-title {
+    font-size: 28px; font-weight: 800; color: var(--primary-dark); margin-bottom: 12px;
+}
+.section-desc {
+    font-size: 15px; color: var(--text-light); max-width: 700px; margin-bottom: 40px;
+}
+
+.card-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+.card {
+    background: var(--card); border-radius: var(--radius); padding: 32px 28px;
+    box-shadow: var(--shadow); transition: var(--transition);
+    border: 1px solid transparent;
+}
+.card:hover {
+    transform: translateY(-4px); box-shadow: var(--shadow-hover);
+    border-color: var(--border);
+}
+.card-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 20px;
+}
+.card-icon.green { background: #e8f8f0; color: var(--success); }
+.card-icon.blue { background: #e8f4fd; color: var(--info); }
+.card-icon.orange { background: #fef3e8; color: var(--accent); }
+.card-icon.red { background: #fde8e8; color: var(--danger); }
+.card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--primary-dark); }
+.card p { font-size: 14px; color: var(--text-light); line-height: 1.8; }
+.card ul { margin-top: 10px; padding-left: 18px; }
+.card ul li { font-size: 13px; color: var(--text-light); line-height: 2; }
+
+.resource-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+.resource-table th, .resource-table td {
+    padding: 14px 16px; text-align: left; font-size: 14px;
+    border-bottom: 1px solid var(--border);
+}
+.resource-table th {
+    background: #f0faf4; font-weight: 700; color: var(--success);
+    border-right: 1px solid var(--border);
+}
+.resource-table td { color: var(--text-light); }
+.resource-table tr:last-child th, .resource-table tr:last-child td { border-bottom: none; }
+.resource-table .badge {
+    display: inline-block; padding: 3px 12px; border-radius: 50px;
+    font-size: 12px; font-weight: 600;
+}
+.badge.green { background: #e8f8f0; color: var(--success); }
+.badge.blue { background: #e8f4fd; color: var(--info); }
+.badge.orange { background: #fef3e8; color: var(--accent); }
+
+.highlight-card {
+    background: linear-gradient(135deg, #e8f8f0, #d4f1e0);
+    border-radius: var(--radius); padding: 32px; margin-top: 24px;
+    display: flex; gap: 20px; align-items: center;
+}
+.highlight-card .hl-icon { font-size: 44px; flex-shrink: 0; }
+.highlight-card h3 { color: var(--success); font-size: 20px; margin-bottom: 6px; }
+.highlight-card p { font-size: 14px; color: var(--text-light); }
+
+.footer {
+    background: #0d1b2a; color: rgba(255,255,255,0.5); text-align: center;
+    padding: 32px 40px; font-size: 13px;
+}
+.footer span { color: var(--accent-light); }
+
+@media (max-width: 768px) {
+    .navbar { padding: 0 20px; }
+    .nav-links { gap: 14px; }
+    .nav-links a { font-size: 12px; }
+    .hero { padding: 50px 20px 70px; }
+    .hero h1 { font-size: 26px; }
+    .section { padding: 40px 20px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .highlight-card { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-logo">
+        <span class="icon">&#9889;</span> HCCT-3000
+    </div>
+    <ul class="nav-links">
+        <li><a href="./index.html">首页</a></li>
+        <li><a href="./product-manual.html">产品说明书</a></li>
+        <li><a href="./safety-knowledge.html">安全知识</a></li>
+        <li><a href="./lab-resources.html" style="color: var(--success); font-weight: 700;">实验资源</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">TEACHING RESOURCES</div>
+        <h1>实验<span>教学资源</span></h1>
+        <p>汇集化工原理实验指导、仿真软件教程、操作示范视频及技能竞赛备赛资料，助力实训教学。</p>
+    </div>
+</header>
+
+<section class="section" id="experiments">
+    <span class="section-tag">EXPERIMENTS</span>
+    <h2 class="section-title">化工原理实验项目</h2>
+    <p class="section-desc">涵盖流体力学、传热、传质、化学反应工程等核心化工单元操作实验，配套完整实验指导书。</p>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon blue">&#128167;</div>
+            <h3>流体力学实验</h3>
+            <ul>
+                <li>雷诺实验 — 观察层流与湍流现象</li>
+                <li>伯努利方程验证实验</li>
+                <li>管道阻力系数测定</li>
+                <li>离心泵特性曲线测定</li>
+                <li>流量计标定实验</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-icon orange">&#128293;</div>
+            <h3>传热实验</h3>
+            <ul>
+                <li>列管换热器总传热系数测定</li>
+                <li>套管换热器对流传热实验</li>
+                <li>自然对流与强制对流比较</li>
+                <li>换热器性能对比分析</li>
+                <li>非稳态导热实验</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-icon green">&#129514;</div>
+            <h3>传质与分离实验</h3>
+            <ul>
+                <li>精馏塔全回流与部分回流操作</li>
+                <li>填料吸收塔传质系数测定</li>
+                <li>干燥速率曲线测定</li>
+                <li>萃取塔液-液萃取实验</li>
+                <li>膜分离性能测试</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-icon red">&#9881;</div>
+            <h3>化学反应工程实验</h3>
+            <ul>
+                <li>连续搅拌釜式反应器（CSTR）停留时间分布</li>
+                <li>管式反应器转化率测定</li>
+                <li>反应动力学参数拟合</li>
+                <li>釜式反应器热稳定性分析</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="simulation" style="background: #fff; max-width: 100%;">
+    <div style="max-width:1200px;margin:0 auto;">
+        <span class="section-tag">SIMULATION</span>
+        <h2 class="section-title">仿真软件资源</h2>
+        <p class="section-desc">推荐以下化工过程仿真软件，辅助课堂教学与自学，提升工程实践能力。</p>
+        <table class="resource-table">
+            <tr><th>Aspen Plus</th><td>稳态化工流程模拟，适用于工艺设计、物性分析、能量优化</td><td><span class="badge green">推荐</span></td></tr>
+            <tr><th>HYSYS</th><td>动态过程模拟，特别适用于油气加工和炼化过程</td><td><span class="badge green">推荐</span></td></tr>
+            <tr><th>MATLAB/Simulink</th><td>控制系统设计与仿真，PID整定、动态特性分析</td><td><span class="badge blue">常用</span></td></tr>
+            <tr><th>COMSOL Multiphysics</th><td>多物理场耦合仿真，适用于反应器CFD建模</td><td><span class="badge orange">进阶</span></td></tr>
+            <tr><th>DCS组态仿真软件</th><td>和利时、中控等国产DCS配套仿真平台</td><td><span class="badge green">推荐</span></td></tr>
+            <tr><th>三维虚拟仿真实训</th><td>沉浸式VR/AR化工厂虚拟巡检与操作培训</td><td><span class="badge blue">常用</span></td></tr>
+        </table>
+    </div>
+</section>
+
+<section class="section" id="competition">
+    <span class="section-tag">COMPETITION</span>
+    <h2 class="section-title">技能竞赛备赛资源</h2>
+    <p class="section-desc">面向全国职业院校技能大赛及行业技能竞赛，提供针对性训练资料与模拟题库。</p>
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon green">&#127942;</div>
+            <h3>化工生产技术赛项</h3>
+            <p>精馏操作、反应控制、故障排除等核心技能考核点，配套操作评分标准与模拟训练方案。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon blue">&#128218;</div>
+            <h3>理论题库</h3>
+            <p>涵盖化工原理、仪表自动化、安全规范等1000+道选择题与判断题，支持在线自测与错题回顾。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon orange">&#127916;</div>
+            <h3>操作示范视频</h3>
+            <p>规范操作流程视频教程：泵启停、调节阀操作、DCS画面组态、PID整定、联锁调试等关键技能点。</p>
+        </div>
+    </div>
+    <div class="highlight-card">
+        <span class="hl-icon">&#128161;</span>
+        <div>
+            <h3>备赛建议</h3>
+            <p>建议参赛学生每周至少进行4学时实操训练，同步完成理论模拟测试。重点强化PID参数整定、联锁逻辑分析和故障诊断三项核心能力。充分利用HCCT-3000实训装置的模块化优势，逐步从单回路控制过渡到复杂串级/比值控制系统。</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="references" style="background: #fff; max-width: 100%;">
+    <div style="max-width:1200px;margin:0 auto;">
+        <span class="section-tag">REFERENCES</span>
+        <h2 class="section-title">参考教材与资料</h2>
+        <p class="section-desc">推荐以下教材和参考资料，辅助理论与实践学习。</p>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon blue">&#128212;</div>
+                <h3>核心教材</h3>
+                <ul>
+                    <li>《化工原理》（上/下册）— 柴诚敬 等</li>
+                    <li>《过程控制工程》— 俞金寿 等</li>
+                    <li>《化工仪表及自动化》— 厉玉鸣 等</li>
+                    <li>《集散控制系统原理及应用》— 何衍庆 等</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-icon green">&#128240;</div>
+                <h3>参考标准</h3>
+                <ul>
+                    <li>GB 50650-2011 化工装置管道布置设计规范</li>
+                    <li>HG/T 20637-2017 化工装置自控设计规定</li>
+                    <li>AQ 3013-2008 危险化学品从业单位安全标准化</li>
+                    <li>ISO 5167 差压流量计测量标准</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-icon orange">&#127760;</div>
+                <h3>在线资源</h3>
+                <ul>
+                    <li>中国大学MOOC — 化工原理课程</li>
+                    <li>学堂在线 — 过程控制工程</li>
+                    <li>Chemical Engineering Online Resources</li>
+                    <li>全国化工设计竞赛官网</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 <span>HCCT-3000</span> 化工控制实训平台 &middot; 实验教学资源</p>
+    <p style="margin-top:6px;">教学相长，实践育人</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+});
+</script>
+</body>
+</html>
